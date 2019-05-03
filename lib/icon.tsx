@@ -9,11 +9,14 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
   onClick: React.MouseEventHandler<SVGElement>
 }
 
-const Icon: React.FunctionComponent<IconProps> = props => {
-  const { className, ...otherProps } = props
+const Icon: React.FunctionComponent<IconProps> = ({
+  className,
+  name,
+  ...otherProps
+}) => {
   return (
     <svg className={classnames(`xui-icon ${className}`)} {...otherProps}>
-      <use xlinkHref={`#${props.name}`} />
+      <use xlinkHref={`#${name}`} />
     </svg>
   )
 }
