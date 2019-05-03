@@ -8,6 +8,6 @@ const fn: React.MouseEventHandler = e => {
 }
 
 ReactDOM.render(
-  <Icon onClick={fn} name="webpack" />,
+  <Icon onClick={fn} name="webpack" className="icon-webpack" />,
   document.getElementById('root')
 )
