@@ -1,5 +1,6 @@
 /dist/*
 /.vscode/
+/coverage/
 # Logs
 logs
 *.log

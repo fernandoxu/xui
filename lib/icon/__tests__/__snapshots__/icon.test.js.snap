@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`icon render 1`] = `
+<svg
+  className="xui-icon x"
+>
+  <use
+    xlinkHref="#webpack"
+  />
+</svg>
+`;
