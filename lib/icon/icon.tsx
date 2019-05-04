@@ -6,7 +6,6 @@ import classnames from '../utils/classnames'
 
 interface IconProps extends React.SVGAttributes<SVGElement> {
   name: string
-  onClick: React.MouseEventHandler<SVGElement>
 }
 
 const Icon: React.FunctionComponent<IconProps> = ({
