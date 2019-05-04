@@ -62,6 +62,6 @@ workflows:
       - test:
           requires:
             - prepare
-      -publish:
+      - publish:
           requires:
             - build
