@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="7" failures="0" time="54.662">
-  <testsuite name="classnames" errors="0" failures="0" skipped="0" timestamp="2019-05-04T09:08:16" time="26.346" tests="5">
+<testsuites name="jest tests" tests="7" failures="0" time="40.807">
+  <testsuite name="classnames" errors="0" failures="0" skipped="0" timestamp="2019-05-04T16:05:35" time="18.588" tests="5">
     <testcase classname="classnames 接收1个classname" name="classnames 接收1个classname" time="0.006">
     </testcase>
     <testcase classname="classnames 接收2个classname" name="classnames 接收2个classname" time="0.001">
     </testcase>
-    <testcase classname="classnames 接收undefined，结果不会出现undefined" name="classnames 接收undefined，结果不会出现undefined" time="0">
+    <testcase classname="classnames 接收undefined，结果不会出现undefined" name="classnames 接收undefined，结果不会出现undefined" time="0.001">
     </testcase>
     <testcase classname="classnames 接收不合法的值" name="classnames 接收不合法的值" time="0">
     </testcase>
     <testcase classname="classnames 接收0个参数" name="classnames 接收0个参数" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="icon" errors="0" failures="0" skipped="0" timestamp="2019-05-04T09:08:16" time="26.937" tests="2">
-    <testcase classname="icon render" name="icon render" time="0.02">
+  <testsuite name="icon" errors="0" failures="0" skipped="0" timestamp="2019-05-04T16:05:35" time="18.838" tests="2">
+    <testcase classname="icon render" name="icon render" time="0.023">
     </testcase>
-    <testcase classname="icon onClick" name="icon onClick" time="0.042">
+    <testcase classname="icon onClick" name="icon onClick" time="0.052">
     </testcase>
   </testsuite>
 </testsuites>
