@@ -1,12 +1,15 @@
+@import '../var.scss';
+
 .xui-dialog {
-  width: 14em;
-  height: 14em;
+  min-width: 15em;
+  min-height: 15em;
   border-radius: 4px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
+  z-index: 2;
 
   &-mask {
     position: fixed;
@@ -14,6 +17,41 @@
     top: 0;
     bottom: 0;
     right: 0;
-    background: rgba(0, 0, 0, .5)
+    background: rgba(0, 0, 0, .5);
+    z-index: 1;
+  }
+
+  &-header {
+    font-size: 22px;
+    padding: 8px 16px;
+    border-bottom: 1px solid $border-color-base;
+  }
+
+  &-main {
+    padding: 8px 16px;
+    min-height: 6em;
+  }
+
+  &-footer {
+    padding: 8px 16px;
+    border-top: 1px solid $border-color-base;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &-close {
+    position: absolute;
+    bottom: 100%;
+    left: 100%;
+    background: $primary-color;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
   }
 }
