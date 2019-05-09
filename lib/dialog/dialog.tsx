@@ -43,4 +43,42 @@ const Dialog: React.FunctionComponent<Props> = props => {
   return ReactDOM.createPortal(x, document.body)
 }
 
+Dialog.defaultProps = {
+  maskClosable: false
+}
+
+// TODO: 控制button的显示，alert不需要button
+
+const _alert = (content: string) => {
+  const wrapper = document.createElement('div')
+
+  const component = (
+    <Dialog
+      visible={true}
+      onCancel={() => {
+        ReactDOM.render(
+          React.cloneElement(component, { visible: false }),
+          wrapper
+        )
+        ReactDOM.unmountComponentAtNode(wrapper)
+        wrapper.remove()
+      }}
+      onOK={() => {
+        ReactDOM.render(
+          React.cloneElement(component, { visible: false }),
+          wrapper
+        )
+        ReactDOM.unmountComponentAtNode(wrapper)
+        wrapper.remove()
+      }}
+    >
+      {content}
+    </Dialog>
+  )
+  document.body.append(wrapper)
+  ReactDOM.render(component, wrapper)
+}
+
+export { _alert }
+
 export default Dialog

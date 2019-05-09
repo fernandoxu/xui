@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Dialog from './dialog'
+import Dialog, { _alert } from './dialog'
 
 export default function() {
   const [x, setX] = useState(false)
@@ -42,7 +42,13 @@ export default function() {
       </div>
       <div>
         <h1>example3</h1>
-        <button>点击弹出</button>
+        <button
+          onClick={() => {
+            _alert('1')
+          }}
+        >
+          点击弹出
+        </button>
       </div>
     </>
   )
