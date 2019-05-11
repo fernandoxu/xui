@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactFragment, ReactNode } from 'react'
 import ReactDOM from 'react-dom'
 import './dialog.scss'
 import { scopedClassCreator } from '../utils'
@@ -9,6 +9,7 @@ interface Props {
   onCancel: React.MouseEventHandler
   onOK: React.MouseEventHandler
   maskClosable?: boolean
+  isAlert?: boolean
 }
 
 const scopedClass = scopedClassCreator('xui-dialog')
@@ -32,10 +33,12 @@ const Dialog: React.FunctionComponent<Props> = props => {
         </div>
         <header className={sc('header')}>提示</header>
         <main className={sc('main')}>{props.children}</main>
-        <footer className={sc('footer')}>
-          <button onClick={onOK}>ok</button>
-          <button onClick={onCancel}>cancel</button>
-        </footer>
+        {props.isAlert ? null : (
+          <footer className={sc('footer')}>
+            <button onClick={onOK}>ok</button>
+            <button onClick={onCancel}>cancel</button>
+          </footer>
+        )}
       </div>
     </>
   ) : null
@@ -44,12 +47,66 @@ const Dialog: React.FunctionComponent<Props> = props => {
 }
 
 Dialog.defaultProps = {
-  maskClosable: false
+  maskClosable: false,
+  isAlert: false
 }
 
-// TODO: 控制button的显示，alert不需要button
-
 const _alert = (content: string) => {
+  const wrapper = document.createElement('div')
+
+  const component = (
+    <Dialog
+      visible={true}
+      isAlert={true}
+      onCancel={() => {
+        ReactDOM.render(
+          React.cloneElement(component, { visible: false }),
+          wrapper
+        )
+        ReactDOM.unmountComponentAtNode(wrapper)
+        wrapper.remove()
+      }}
+      onOK={() => {}}
+    >
+      {content}
+    </Dialog>
+  )
+  document.body.append(wrapper)
+  ReactDOM.render(component, wrapper)
+}
+
+const _confirm = (content: string, yes?: () => void, no?: () => void) => {
+  const wrapper = document.createElement('div')
+  const component = (
+    <Dialog
+      visible={true}
+      onCancel={() => {
+        ReactDOM.render(
+          React.cloneElement(component, { visible: false }),
+          wrapper
+        )
+        ReactDOM.unmountComponentAtNode(wrapper)
+        wrapper.remove()
+        no && no()
+      }}
+      onOK={() => {
+        ReactDOM.render(
+          React.cloneElement(component, { visible: false }),
+          wrapper
+        )
+        ReactDOM.unmountComponentAtNode(wrapper)
+        wrapper.remove()
+        yes && yes()
+      }}
+    >
+      {content}
+    </Dialog>
+  )
+  document.body.append(wrapper)
+  ReactDOM.render(component, wrapper)
+}
+
+const _modal = (content: ReactNode | ReactFragment) => {
   const wrapper = document.createElement('div')
 
   const component = (
@@ -79,6 +136,8 @@ const _alert = (content: string) => {
   ReactDOM.render(component, wrapper)
 }
 
-export { _alert }
+export { _alert, _confirm, _modal }
 
 export default Dialog
+
+//TODO: 三个api 按钮显示优化和代码重构

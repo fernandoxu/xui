@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import Dialog, { _alert } from './dialog'
+import Dialog, { _alert, _confirm, _modal } from './dialog'
 
 export default function() {
   const [x, setX] = useState(false)
-  const [y, setY] = useState(false)
+  // const [y, setY] = useState(false)
 
   return (
     <>
@@ -23,7 +23,7 @@ export default function() {
           hi
         </Dialog>
       </div>
-      <div>
+      {/* <div>
         <h1>example2</h1>
         <button onClick={() => setY(!y)}>button</button>
         <Dialog
@@ -41,15 +41,31 @@ export default function() {
         </Dialog>
       </div>
       <div>
-        <h1>example3</h1>
+        <h1>example3 - alert</h1>
         <button
           onClick={() => {
             _alert('1')
           }}
         >
-          点击弹出
+          alert
         </button>
-      </div>
+        <button
+          onClick={() => {
+            _confirm(
+              'confirm',
+              () => {
+                console.log('yes')
+              },
+              () => {
+                console.log('no')
+              }
+            )
+          }}
+        >
+          confirm
+        </button>
+        <button onClick={() => _modal(<h1>hello world</h1>)}>model</button>
+      </div> */}
     </>
   )
 }
