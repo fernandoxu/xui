@@ -1,6 +1,9 @@
 import React, { ReactElement } from 'react'
 import { scopedClassCreator } from '../utils'
 import Aside from './aside'
+import Content from './content'
+import Header from './header'
+import Footer from './footer'
 
 import './layout.scss'
 
@@ -24,3 +27,5 @@ const Layout: React.FunctionComponent<Props> = props => {
 }
 
 export default Layout
+
+export { Header, Footer, Aside, Content }

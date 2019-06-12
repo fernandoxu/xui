@@ -1,0 +1,89 @@
+// @import './lib/var.scss';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+$main-color: #b0c5f0;
+
+body,
+pre {
+  font-family: Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: .02857em;
+}
+
+.example-wrapper {
+
+  >.example-header {
+    box-shadow: 0 2px 8px #f0f1f2;
+    padding: 8px 0;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      padding-left: 32px;
+
+      span {
+        color: #b0c5f0;
+        padding-left: 8px;
+        font-size: 32px;
+      }
+    }
+  }
+
+  .example-aside {
+    h2 {
+      padding: 8px 8px 8px 32px;
+      font-size: 18px;
+    }
+
+    ul {
+      padding: 0 0 8px 0;
+      min-width: 12em;
+
+      li {
+
+        a {
+          color: #333;
+          display: block;
+          padding: 8px 0 8px 32px;
+
+
+          &:hover {
+            color: $main-color;
+          }
+
+          &.active {
+            background: $main-color;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .example-footer {
+    text-align: center;
+  }
+
+  .example-content {
+    padding: 32px 170px 144px 64px;
+  }
+}

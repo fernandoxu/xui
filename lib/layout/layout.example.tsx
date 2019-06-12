@@ -10,7 +10,7 @@ export default function() {
     <>
       <div>
         <h1>第一个例子</h1>
-        <Layout style={{ height: 500, background: 'skyblue' }}>
+        <Layout style={{ width: 700, height: 500, background: 'skyblue' }}>
           <Header>header</Header>
           <Content style={{ background: 'cyan' }}>content</Content>
           <Footer>footer</Footer>
@@ -18,7 +18,7 @@ export default function() {
       </div>
       <div>
         <h1>第二个例子</h1>
-        <Layout style={{ height: 500, background: 'skyblue' }}>
+        <Layout style={{ width: 700, height: 500, background: 'skyblue' }}>
           <Header>header</Header>
           <Layout>
             <Aside style={{ width: 300, background: 'lightpink' }}>aside</Aside>
@@ -29,7 +29,7 @@ export default function() {
       </div>
       <div>
         <h1>第三个例子</h1>
-        <Layout style={{ height: 500, background: 'skyblue' }}>
+        <Layout style={{ width: 700, height: 500, background: 'skyblue' }}>
           <Header>header</Header>
           <Layout>
             <Content style={{ background: 'cyan' }}>content</Content>
@@ -40,7 +40,7 @@ export default function() {
       </div>
       <div>
         <h1>第四个例子</h1>
-        <Layout style={{ height: 500, background: 'skyblue' }}>
+        <Layout style={{ width: 700, height: 500, background: 'skyblue' }}>
           <Aside style={{ width: 300, background: 'lightpink' }}>aside</Aside>
           <Layout>
             <Header>header</Header>
